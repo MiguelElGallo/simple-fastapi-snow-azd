@@ -4,17 +4,17 @@ param tags object
 
  
 
-resource web 'Microsoft.Web/sites@2022-03-01' = {
-  name: 'web-${resourceToken}'
+resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
+  name: 'function-${resourceToken}'
   location: location
-  tags: union(tags, { 'azd-service-name': 'web' })
-  kind: 'app,linux'
+  tags: union(tags, { 'azd-service-name': 'function' })
+  kind: 'functionapp,linux'
   properties: {
     serverFarmId: appServicePlan.id
     siteConfig: {
-      linuxFxVersion: 'PYTHON|3.9'
+      linuxFxVersion: 'PYTHON|3.11'
       ftpsState: 'Disabled'
-      appCommandLine: 'startup.sh'
+      appCommandLine: ''
     }
     httpsOnly: true
   }
@@ -67,4 +67,4 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
 }
 
 
-output WEB_URI string = 'https://${web.properties.defaultHostName}'
+output WEB_URI string = 'https://${functionApp.properties.defaultHostName}/docs'
