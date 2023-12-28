@@ -8,7 +8,7 @@ products:
 description: "This is a sample Azure Function app created with the FastAPI framework to serve data from Snowflake using pagination"
 title: Using FastAPI Framework with Azure Functions to serve paginated data from Snowflake
 author: miguelelgallo
-urlFragment: azure-functions-python-create-fastapi-app
+urlFragment: azure-functions-python-simple-fastapi-snow-azd
 ---
 
 # Using FastAPI Framework with Azure Functions
