@@ -131,3 +131,9 @@ dmypy.json
 .azure
 
 .python_packages
+
+# Azurite
+__azurite*
+**/.DS_Store.DS_Store
+
+

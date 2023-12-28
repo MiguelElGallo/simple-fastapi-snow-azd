@@ -3,8 +3,8 @@
 # Manually managing azure-functions-worker may cause unexpected issues
 
 azure-functions
-fastapi
-sqlalchemy-pagination-fastapi
-pydantic
-python-dotenv
-snowflake-sqlalchemy
+fastapi==0.108.0
+sqlalchemy-pagination-fastapi==0.0.4
+pydantic==2.5.3
+python-dotenv==1.0.0
+snowflake-sqlalchemy==1.5.1
