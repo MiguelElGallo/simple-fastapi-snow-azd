@@ -7,7 +7,7 @@ The `http_auth_level` is set to `func.AuthLevel.ANONYMOUS`, allowing anonymous a
 
 import azure.functions as func
 
-from src.WrapperFunction import init_app as server 
+from WrapperFunction import init_app as server 
 
 fastapi_app = server()
 app = func.AsgiFunctionApp(app=fastapi_app, http_auth_level=func.AuthLevel.ANONYMOUS)

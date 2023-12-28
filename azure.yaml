@@ -5,7 +5,7 @@ metadata:
   template: simple-fastapi-snow-azd@0.0.1-beta
 services:
   api:
-    project: ./src  
+    project: .
     language: python
     host: function
     

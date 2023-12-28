@@ -1,13 +1,14 @@
 param location string
 param resourceToken string
 param tags object
+param skuplanname string = 'Y1'
 
  
 
 resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
   name: 'function-${resourceToken}'
   location: location
-  tags: union(tags, { 'azd-service-name': 'function' })
+  tags: union(tags, { 'azd-service-name': 'api' })
   kind: 'functionapp,linux'
   properties: {
     serverFarmId: appServicePlan.id
@@ -58,7 +59,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: 'app-${resourceToken}'
   location: location
   sku: {
-    name: 'F1'
+    name: skuplanname
   }
   kind: 'linux'
   properties: {
