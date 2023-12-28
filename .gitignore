@@ -134,6 +134,8 @@ dmypy.json
 
 # Azurite
 __azurite*
-**/.DS_Store.DS_Store
+__queuestorage*
+__blobstorage*
+
 
 
