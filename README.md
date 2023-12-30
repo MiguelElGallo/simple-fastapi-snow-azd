@@ -61,7 +61,7 @@ You can develop and deploy a function app using either Visual Studio Code or the
 
 * [Prerequisites for VS Code](https://docs.microsoft.com/azure/azure-functions/create-first-function-vs-code-python#configure-your-environment)
 * [Prerequisites for Azure CLI](https://docs.microsoft.com/azure/azure-functions/create-first-function-cli-python#configure-your-local-environment)
-* Snowflake account (ou can geet a free trial)
+* Snowflake account (you can geet a free trial)
 
 ## Setup
 
