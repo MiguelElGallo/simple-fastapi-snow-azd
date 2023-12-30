@@ -21,7 +21,7 @@ This example exposes a Snowflake table as an API endpoint, using pagination. Pag
 
 ## True Pagination
 
-For true pagination to ocurr the following needs to happen:
+For true pagination to exist, the following needs to happen:
 
 - The request to the database must be paginated
 - The response to the consumer must be paginated
@@ -61,7 +61,7 @@ You can develop and deploy a function app using either Visual Studio Code or the
 
 * [Prerequisites for VS Code](https://docs.microsoft.com/azure/azure-functions/create-first-function-vs-code-python#configure-your-environment)
 * [Prerequisites for Azure CLI](https://docs.microsoft.com/azure/azure-functions/create-first-function-cli-python#configure-your-local-environment)
-* Snowflake account (you can geet a free trial)
+* Snowflake account (you can get a free trial)
 
 ## Setup
 
