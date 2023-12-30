@@ -17,18 +17,7 @@ Azure Functions supports WSGI and ASGI-compatible frameworks with HTTP-triggered
 
 This example exposes a Snowflake table as an API endpoint, using pagination. Pagination is key because by breaking up large datasets into smaller, manageable chunks, APIs can deliver data more efficiently and improve overall performance.
 
-![Alt text](images/FastApiPag.png)
-
-## Prerequisites
-
-You can develop and deploy a function app using either Visual Studio Code or the Azure CLI. Make sure you have the required prerequisites for your preferred environment:
-
-* [Prerequisites for VS Code](https://docs.microsoft.com/azure/azure-functions/create-first-function-vs-code-python#configure-your-environment)
-* [Prerequisites for Azure CLI](https://docs.microsoft.com/azure/azure-functions/create-first-function-cli-python#configure-your-local-environment)
-
-## Setup
-
-Clone or download [this sample's repository](https://github.com/miguelp/simple-fastapi-snow-azd/), and open the `simple-fastapi-snow-azd` folder in Visual Studio Code or your preferred editor (if you're using the Azure CLI).
+![Alt text](images/simple-fastapi-snow-azd.png)
 
 ## True Pagination
 
@@ -66,6 +55,20 @@ And in the response you can also see that the total numbrer of pages is returned
 ![Alt text](images/TotalNumberOfrecords.png)
 
 
+## Prerequisites
+
+You can develop and deploy a function app using either Visual Studio Code or the Azure CLI. Make sure you have the required prerequisites for your preferred environment:
+
+* [Prerequisites for VS Code](https://docs.microsoft.com/azure/azure-functions/create-first-function-vs-code-python#configure-your-environment)
+* [Prerequisites for Azure CLI](https://docs.microsoft.com/azure/azure-functions/create-first-function-cli-python#configure-your-local-environment)
+* Snowflake account (ou can geet a free trial)
+
+## Setup
+
+Clone or download [this sample's repository](https://github.com/miguelp/simple-fastapi-snow-azd/), and open the `simple-fastapi-snow-azd` folder in Visual Studio Code or your preferred editor (if you're using the Azure CLI).
+
+
+
 ## Running the sample
 
 ### Testing locally
@@ -80,7 +83,7 @@ SNOWFLAKE_PASSWORD = yourpassworr
 SNOWFLAKE_DATABASE = SNOWFLAKE_SAMPLE_DATA/TPCH_SF1
 ```
 
-NOTE: Before moving this to production implement a Keyvault reference for your password/certificate
+NOTE: Before moving this to production implement a Keyvault reference for your password/certificate. It is recommended to use AZURE API management to expose functions as APIs.
 
 1. Create a [Python virtual environment](https://docs.python.org/3/tutorial/venv.html#creating-virtual-environments) and activate it.
 
