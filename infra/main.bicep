@@ -77,3 +77,6 @@ module functionApp 'core/host/functions.bicep' = {
     storageAccountName: storageAccount.outputs.name
   }
 }
+output FX_WEB_BASE_URL string = functionApp.outputs.uri
+output FX_SERV_PRINCIPAL string = functionApp.outputs.identityPrincipalId
+output FX_NAME string = functionApp.outputs.name
