@@ -1,14 +1,13 @@
 # SIMPLE-FASTAPI-SNOW-AZD Application Tests
 
-The included [Playwright](https://playwright.dev/) smoke test will hit the ToDo app web endpoint, create, and delete an item.
-
+The included [Playwright](https://playwright.dev/) smoke test will hit the /docs api endpoint, and request customer with key 1
 ## Run Tests
 
 The endpoint it hits will be discovered in this order:
 
 1. Value of `FX_WEB_BASE_URL` environment variable
 1. Value of `FX_WEB_BASE_URL` found in default .azure environment
-1. Defaults to `http://localhost:3000`
+1. Defaults to `http://localhost:7071`
 
 To run the tests:
 
