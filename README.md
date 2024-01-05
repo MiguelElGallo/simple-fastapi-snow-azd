@@ -65,7 +65,7 @@ You can develop and deploy a function app using either Visual Studio Code or the
 
 ## Setup
 
-Clone or download [this sample's repository](https://github.com/miguelp/simple-fastapi-snow-azd/), and open the `simple-fastapi-snow-azd` folder in Visual Studio Code or your preferred editor (if you're using the Azure CLI).
+Clone or download [this sample's repository](https://github.com/miguelelgallo/simple-fastapi-snow-azd/), and open the `simple-fastapi-snow-azd` folder in Visual Studio Code or your preferred editor (if you're using the Azure CLI).
 
 
 
@@ -74,12 +74,12 @@ Clone or download [this sample's repository](https://github.com/miguelp/simple-f
 ### Testing locally
 
 0. Create a .env file, this file should contain the following: 
-(THIS STEP IS MANDATORY, create this file before deploying to Azure)
+(This step is mandatory, create this file before deploying to Azure)
 
 ```
-SNOWFLAKE_URL = xxxxxx.region.hyperscaler
+SNOWFLAKE_URL = youraccountidentifier
 SNOWFLAKE_USERNAME = youruser
-SNOWFLAKE_PASSWORD = yourpassworr
+SNOWFLAKE_PASSWORD = yourpassword
 SNOWFLAKE_DATABASE = SNOWFLAKE_SAMPLE_DATA/TPCH_SF1
 ```
 
@@ -96,22 +96,15 @@ NOTE: Before moving this to production implement a Keyvault reference for your p
 3. If you are using VS Code for development, click the "Run and Debug" button or follow [the instructions for running a function locally](https://docs.microsoft.com/azure/azure-functions/create-first-function-vs-code-python#run-the-function-locally). Outside of VS Code, follow [these instructions for using Core Tools commands directly to run the function locally](https://docs.microsoft.com/azure/azure-functions/functions-run-local?tabs=v4%2Cwindows%2Cpython%2Cportal%2Cbash#start).
 
 4. Once the function is running, test the function at the local URL displayed in the Terminal panel:
-=======
+
 ```log
 Functions:
         http_app_func: [GET,POST,DELETE,HEAD,PATCH,PUT,OPTIONS] http://localhost:7071//{*route}
 ```
-
-    ```log
-    Functions:
-            WrapperFunction: [GET,POST] http://localhost:7071/{*route}
-    ```
-
-    Try out URLs corresponding to the handlers in the app, both the simple path and the parameterized path:
-
-    ```
-    http://localhost:7071/docs
-    ```
+Try out URLs corresponding to the handlers in the app, both one or multiple customers:
+```
+http://localhost:7071/docs
+```
 
 ### Deploying to Azure
 
