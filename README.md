@@ -94,7 +94,7 @@ NOTE: Before moving this to production implement a Keyvault reference for your p
     ```
 
 3. You will need Azurite Local Storage Emulator, installed and running. 
-Install Azurite and start it . [The instructions for installing an starting Azurite] (https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azurite?tabs=visual-studio-code%2Cblob-storage)
+Install Azurite and start it . [The instructions for installing an starting Azurite](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azurite?tabs=visual-studio-code%2Cblob-storage)
 
 4. If you are using VS Code for development, click the "Run and Debug" button or follow [the instructions for running a function locally](https://docs.microsoft.com/azure/azure-functions/create-first-function-vs-code-python#run-the-function-locally). Outside of VS Code, follow [these instructions for using Core Tools commands directly to run the function locally](https://docs.microsoft.com/azure/azure-functions/functions-run-local?tabs=v4%2Cwindows%2Cpython%2Cportal%2Cbash#start).
 
