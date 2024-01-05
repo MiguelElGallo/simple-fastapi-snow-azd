@@ -104,10 +104,11 @@ Install Azurite and start it . [The instructions for installing an starting Azur
 Functions:
         http_app_func: [GET,POST,DELETE,HEAD,PATCH,PUT,OPTIONS] http://localhost:7071//{*route}
 ```
-Try out URLs corresponding to the handlers in the app, both one or multiple customers:
+Try out the following URL:
 ```
 http://localhost:7071/docs
 ```
+There you will see both API, for one and for multiple customer
 
 ### Deploying to Azure
 
