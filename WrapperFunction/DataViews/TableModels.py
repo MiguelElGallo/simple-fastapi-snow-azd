@@ -79,6 +79,7 @@ class Customer(Base):
 
 
 class CustomerFilter(Filter):
+
     """
     Represents a filter for customer data.
 
@@ -88,8 +89,10 @@ class CustomerFilter(Filter):
         c_address (Optional[str]): The customer address.
         c_nationkey (Optional[str]): The customer nation key.
         c_phone (Optional[str]): The customer phone number.
+    More info at: https://fastapi-filter.netlify.app/
     """
 
+    order_by: Optional[list[str]] = {"c_custkey"}
     c_custkey: Optional[str] = None
     c_name: Optional[str] = None
     c_address: Optional[str] = None
@@ -108,6 +111,5 @@ class CustomerFilter(Filter):
         """
 
         model = Customer
-        ordering_field_name = "custom_order_by"
-        search_field_name = "custom_search"
+        ordering_field_name = "order_by"
         search_model_fields = ["c_name", "c_address", "c_nationkey"]

@@ -56,6 +56,7 @@ def get_customers_filter(
     log.info("(customer.py) Getting customer by filter: %s", customer_filter)
     query = select(CustomerModel)
     query = customer_filter.filter(select(CustomerModel))
+    query = customer_filter.sort(query)
     customers = paginate(db, query)
     return customers
 
