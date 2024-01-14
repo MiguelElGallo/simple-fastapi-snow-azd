@@ -1,16 +1,17 @@
-
 import logging as log
+from typing import Optional
 from sqlalchemy import Column, String, exc
-from sqlalchemy.exc import  NoResultFound
+from sqlalchemy.exc import NoResultFound
 from fastapi_pagination.ext.sqlalchemy import paginate
 from WrapperFunction.DbConn.dbconnection import Base
 from fastapi_pagination import Page
 from fastapi import Query
-from fastapi_pagination.ext.sqlalchemy import select 
+from fastapi_pagination.ext.sqlalchemy import select
+from fastapi_filter.contrib.sqlalchemy import Filter
 
 Page = Page.with_custom_options(
-       size=Query(100, ge=1, le=500),
-       )
+    size=Query(100, ge=1, le=500),
+)
 
 
 class Customer(Base):
@@ -25,7 +26,9 @@ class Customer(Base):
     __tablename__ = "customer"
     c_custkey = Column(String, primary_key=True)
     c_name = Column(String, nullable=False)
-
+    c_address = Column(String, nullable=False)
+    c_nationkey = Column(String, nullable=False)
+    c_phone = Column(String, nullable=False)
 
     @classmethod
     def get(cls, db, c_custkey: str):
@@ -47,12 +50,9 @@ class Customer(Base):
             return None
         return transaction
 
-    #@classmethod
-    
-    def get_all(cls, db, 
-                page: int = Query(1, ge=1), 
-                per_page: int = Query(100, ge=0)
-    ):
+    # @classmethod
+
+    def get_all(cls, db, page: int = Query(1, ge=1), per_page: int = Query(100, ge=0)):
         """
         Retrieves all customers from the database.
 
@@ -70,6 +70,44 @@ class Customer(Base):
             log.error("Error getting all customers: %s", e)
             raise e
 
-        return paginate(conn = db, query = select(cls).order_by(cls.c_custkey), limit = limit, offset = offset)
+        return paginate(
+            conn=db,
+            query=select(cls).order_by(cls.c_custkey),
+            limit=limit,
+            offset=offset,
+        )
 
 
+class CustomerFilter(Filter):
+    """
+    Represents a filter for customer data.
+
+    Attributes:
+        c_custkey (Optional[str]): The customer key.
+        c_name (Optional[str]): The customer name.
+        c_address (Optional[str]): The customer address.
+        c_nationkey (Optional[str]): The customer nation key.
+        c_phone (Optional[str]): The customer phone number.
+    """
+
+    c_custkey: Optional[str] = None
+    c_name: Optional[str] = None
+    c_address: Optional[str] = None
+    c_nationkey: Optional[str] = None
+    c_phone: Optional[str] = None
+
+    class Constants(Filter.Constants):
+        """
+        Constants class for defining model-specific constants.
+
+        Attributes:
+            model (Type[Model]): The model associated with the constants.
+            ordering_field_name (str): The name of the field used for ordering.
+            search_field_name (str): The name of the field used for searching.
+            search_model_fields (List[str]): The list of model fields used for searching.
+        """
+
+        model = Customer
+        ordering_field_name = "custom_order_by"
+        search_field_name = "custom_search"
+        search_model_fields = ["c_name", "c_address", "c_nationkey"]
