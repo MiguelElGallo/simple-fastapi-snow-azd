@@ -8,3 +8,5 @@ sqlalchemy-pagination-fastapi==0.0.4
 pydantic==2.5.3
 python-dotenv==1.0.0
 snowflake-sqlalchemy==1.5.1
+fastapi-filter==1.1.0
+fastapi-sqlalchemy-filter==0.2.5
