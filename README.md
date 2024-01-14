@@ -42,6 +42,22 @@ This example exposes the table: SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMERS that is
 
 We can see here that only 50 records (one page, in this case the second page (offset 50)) are being requested from the database.
 
+### Filtering and custom sorting
+There is an endpoint 
+```log
+/get-customers-filter?order_by=c_custkey&c_nationkey=4&page=1&size=50
+```
+
+That allows you to define the column to sort, and also allows you to define extra filters:
+![Swagger UI showing the parameters for filtering and sorting](images/filterinSwaggerUI.png)
+
+In 1 you can see the new endpoint. In 2 you can set the field chosen for sorting, and in 3 you can see that we are filtering by c_nationkey = 4
+
+The query sent to Snowflake is:
+![Alt text](images/filterinsnow.png)
+
+Which is what is expected.
+
 After you deploy this example,you can go to:
 
 (https://yourfunctionsurl)/docs
