@@ -3,9 +3,9 @@
 # Manually managing azure-functions-worker may cause unexpected issues
 
 azure-functions
-fastapi==0.110.2
+fastapi==0.110.3
 sqlalchemy-pagination-fastapi==0.0.4
-pydantic==2.7.0
+pydantic==2.7.1
 python-dotenv==1.0.1
 snowflake-sqlalchemy==1.5.3
 fastapi-filter==1.1.0
