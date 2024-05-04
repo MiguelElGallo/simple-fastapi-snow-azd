@@ -3,7 +3,7 @@
 # Manually managing azure-functions-worker may cause unexpected issues
 
 azure-functions
-fastapi==0.110.3
+fastapi==0.111.0
 sqlalchemy-pagination-fastapi==0.0.4
 pydantic==2.7.1
 python-dotenv==1.0.1
