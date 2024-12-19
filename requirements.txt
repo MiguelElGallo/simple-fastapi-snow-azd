@@ -5,8 +5,8 @@
 azure-functions
 fastapi==0.115.6
 sqlalchemy-pagination-fastapi==0.0.4
-pydantic==2.10.3
+pydantic==2.10.4
 python-dotenv==1.0.1
-snowflake-sqlalchemy==1.7.1
-fastapi-filter==2.0.0
+snowflake-sqlalchemy==1.7.2
+fastapi-filter==2.0.1
 fastapi-sqlalchemy-filter==0.2.5
