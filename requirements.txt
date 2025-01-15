@@ -7,6 +7,6 @@ fastapi==0.115.6
 sqlalchemy-pagination-fastapi==0.0.4
 pydantic==2.10.5
 python-dotenv==1.0.1
-snowflake-sqlalchemy==1.7.2
+snowflake-sqlalchemy==1.7.3
 fastapi-filter==2.0.1
 fastapi-sqlalchemy-filter==0.2.5
